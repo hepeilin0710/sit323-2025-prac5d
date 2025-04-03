@@ -20,7 +20,7 @@ This project is a Node.js-based calculator microservice that supports basic math
 
 ### Step 1: Set the active GCP project
 
-```bash
+```
 gcloud config set project sit323-25t1-peilin-he-4af9d68
 Step 2: Authenticate Docker with Artifact Registry
 bash
@@ -29,15 +29,11 @@ gcloud auth configure-docker australia-southeast2-docker.pkg.dev
 Step 3: Tag the local Docker image
 Replace my-web-app with your local image name (built from Dockerfile).
 
-bash
 
 docker tag my-web-app australia-southeast2-docker.pkg.dev/sit323-25t1-peilin-he-4af9d68/sit323/calculator-app:v1
 Step 4: Push the image to Artifact Registry
-bash
 
 docker push australia-southeast2-docker.pkg.dev/sit323-25t1-peilin-he-4af9d68/sit323/calculator-app:v1
 Step 5: Run the image from the registry to test
-bash
-复制
-编辑
+
 docker run -p 3000:3000 australia-southeast2-docker.pkg.dev/sit323-25t1-peilin-he-4af9d68/sit323/calculator-app:v1
